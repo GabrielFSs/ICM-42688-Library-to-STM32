@@ -52,7 +52,7 @@ uint8_t ICM42688_INIT(I2C_HandleTypeDef *I2Cx)
     return 1;
 }
 
-void MPU6050_Read_ACCEL(I2C_HandleTypeDef *I2Cx, ICM42688_t *DataStruct)
+void ICM42688_READ_ACCEL(I2C_HandleTypeDef *I2Cx, ICM42688_t *DataStruct)
 {
     uint8_t Rec_Data[6];
 
@@ -68,7 +68,7 @@ void MPU6050_Read_ACCEL(I2C_HandleTypeDef *I2Cx, ICM42688_t *DataStruct)
 }
 
 
-void ICM42688_Read_GYRO(I2C_HandleTypeDef *I2Cx, ICM42688_t *DataStruct)
+void ICM42688_READ_GYRO(I2C_HandleTypeDef *I2Cx, ICM42688_t *DataStruct)
 {
     uint8_t Rec_Data[6];
 
