@@ -5,7 +5,7 @@
  *  Author: Gabriel Felipe
  *  email: gabriel.felipe@ufu.br
  *
- *  -Based on MPU6050.h by leech001 - https://github.com/leech001/MPU6050-
+ *  -Based on MPU6050.h by leech001 - https://github.com/leech001/MPU6050 -
  *
  *  This library is focused on defining the ICM-42688 registers,
  *  reading gyroscope and accelerometer data and defining the interrupt 0 parameters
@@ -21,9 +21,7 @@
 
 #define ICM42688_ADDRESS 0x68	//Address 0x0011110 AP_AD0 = GND
 
-/*
- *	Register Defines for Bank set default, BANK 0 Register 0x76 = 0 (default)
- */
+//	Register defines for Bank set default, BANK 0 Register 0x76 = 0 (default)
 
 #define		DEVICE_CONFIG 			0x11
 #define		DRIVE_CONFIG 			0x13
@@ -82,7 +80,7 @@
 #define		FIFO_LOST_PKT0  		0x6C
 #define		FIFO_LOST_PKT1 			0x6D
 #define		SELF_TEST_CONFIG 		0x70
-#define		WHO_AM_I  				0x75
+#define		WHO_AM_I_G  			0x75
 #define		REG_BANK_SEL 			0x76
 
 /*
@@ -94,10 +92,16 @@ typedef struct {
     int16_t Accel_X;
     int16_t Accel_Y;
     int16_t Accel_Z;
+    double Ax;
+    double Ay;
+    double Az;
+
     int16_t Gyro_X;
     int16_t Gyro_Y;
     int16_t Gyro_Z;
-
+    double Gx;
+    double Gy;
+    double Gz;
 
 } ICM42688_t;
 
